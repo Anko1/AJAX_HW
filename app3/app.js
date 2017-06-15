@@ -1,13 +1,27 @@
-function ajax() {
+function ajax(params) {
     this.req = null;
 
-    this.default = function (method, url, headers) {
+    this.main = function (method, url, headers, auto) {
         var xhr = new XMLHttpRequest();
         xhr.open(method, url);
         setHeaders(xhr, headers);
         this.req = xhr;
 
+        if(auto) xhr.send();
+
         return xhr;
+    };
+
+    if(params){
+        var m = 'GET', u = null, h = null;
+        
+        if('method' in params){ m = params.method;}
+        if('url' in params){ u = params.url;}
+        if('headers' in params){ h = params.headers;}
+
+        //console.log(m, u, h);
+
+        if(u) this.main(m, u, h, true);
     }
 }
 
