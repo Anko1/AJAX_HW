@@ -1,0 +1,40 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#weather{
+    height: 30vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#weather span{
+    width: 100px;
+    font-size: 48px;
+}
+
+#temperature::after{
+    content: ' \00b0 C';
+}
+
+#weather .control  button{
+    float: left;
+    width: 50%;
+}
+#weather .control h1{
+    min-width: 150px;
+    text-align: center;
+}
