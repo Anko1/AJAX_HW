@@ -5,7 +5,7 @@ var pos = 0;
 function getWeather() {
 
     $.ajax({
-        url: `http://api.openweathermap.org/data/2.5/weather?q=${cites[pos]},UA&appid=${KEY}`,
+        url: `https://api.openweathermap.org/data/2.5/weather?q=${cites[pos]},UA&appid=${KEY}`,
         success: function(data){
             renderWeather(data);
             // console.log(data);
